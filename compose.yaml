@@ -1,0 +1,12 @@
+services:
+  autumn27:
+    build: .
+    ports:
+      - "${AUTUMN27_PORT:-3000}:3000"
+    environment:
+      PUBLIC_ORIGIN: "${PUBLIC_ORIGIN:-http://localhost:3000}"
+    volumes:
+      - autumn27-private-data:/app/storage
+    restart: unless-stopped
+volumes:
+  autumn27-private-data:

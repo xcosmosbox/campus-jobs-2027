@@ -1,0 +1,20 @@
+{
+  "format": "autumn27-public-data-v1",
+  "catalogSha256": "f70d539b9e99f2789d3a139358fdb4a22bbf3b954c2019f2ed8354939d76547d",
+  "positions": 28819,
+  "companies": 203,
+  "scans": 203,
+  "includesPersonalData": false,
+  "files": [
+    {
+      "name": "jobs.sqlite",
+      "bytes": 75948032,
+      "sha256": "af19a6446820eae0c1b051cf9ffa589b2c6619b27e4a07c546cc7e88ef9309cd"
+    },
+    {
+      "name": "jobs.sql",
+      "bytes": 56653124,
+      "sha256": "8b721ed7a99ef8203179f8ae6f57620a2fe7ed76ae16a0ab82ffe43dea5d68ff"
+    }
+  ]
+}

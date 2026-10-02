@@ -1,0 +1,14 @@
+.git
+.env*
+!.env.example
+node_modules
+dist
+.next
+.wrangler
+.sites-runtime
+storage
+exports
+outputs
+docs/catalog-audit
+*.tsbuildinfo
+datasets

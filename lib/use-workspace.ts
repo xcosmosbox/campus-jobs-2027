@@ -1,0 +1,13 @@
+'use client';
+import {useState,useEffect,useRef} from 'react';
+import {browserStorage} from './browser-storage';
+import {WorkspaceClient,ApiError,type ClientState,type Transport} from './workspace-client';
+import {emptyWorkspace} from './workspace';
+async function request<T>(url:string,body?:unknown,scope?:string):Promise<T>{let response:Response;try{response=await fetch(url,{method:body===undefined?'GET':'POST',cache:'no-store',headers:{...(body===undefined?{}:{'Content-Type':'application/json'}),...(scope?{'X-Workspace-Scope':scope}:{})},...(body===undefined?{}:{body:JSON.stringify(body)}),signal:AbortSignal.timeout(10000)});}catch{throw new Error('暂时无法连接云端，修改会留在本机，联网后再同步');}let result:unknown;try{result=await response.json();}catch{throw new Error('暂时无法读取云端响应，请稍后重试');}if(!response.ok)throw new ApiError((result as {error?:string}).error||'请求失败',response.status,result as Record<string,unknown>);return result as T;}
+const transport:Transport={session:async()=>(await request<{session:Awaited<ReturnType<Transport['session']>>}>('/api/session')).session,read:scope=>request('/api/workspace',undefined,scope),save:(scope,op)=>request('/api/workspace',op,scope),action:(action,code)=>request('/api/session',{action,...(code?{code}:{})}),history:(scope,cursor)=>request('/api/history?cursor='+encodeURIComponent(cursor),undefined,scope)};
+const initial:ClientState={data:emptyWorkspace,session:null,ready:false,loading:true,saving:false,syncing:false,online:true,localAvailable:true,error:'',notice:'',pending:[],lastSaved:''};
+export function useWorkspace(){const [state,setState]=useState(initial),client=useRef<WorkspaceClient|null>(null);
+ useEffect(()=>{const c=new WorkspaceClient(browserStorage,transport,setState);client.current=c;void c.init();const refresh=()=>void c.refresh();window.addEventListener('online',refresh);const timer=setInterval(()=>{if(c.state.pending.length||!c.state.online)void c.refresh();},30000);return()=>{c.stop();window.removeEventListener('online',refresh);clearInterval(timer);};},[]);
+ const c=()=>{if(!client.current)throw new Error('记录正在读取，请稍后操作');return client.current;};
+ return {...state,save:(...args:Parameters<WorkspaceClient['save']>)=>c().save(...args),refresh:()=>c().refresh(),moreHistory:()=>c().moreHistory(),sync:()=>c().sync(),action:(...args:Parameters<WorkspaceClient['action']>)=>c().action(...args),resolve:(...args:Parameters<WorkspaceClient['resolve']>)=>c().resolve(...args),importBackup:(input:unknown)=>c().importBackup(input),backup:(...args:Parameters<WorkspaceClient['backup']>)=>c().backup(...args),localCopies:()=>c().localCopies(),conflicts:()=>client.current?.conflictRows()||[]};
+}
