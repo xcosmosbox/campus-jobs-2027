@@ -36,4 +36,4 @@ pnpm run export:source
 
 Node.js 24、pnpm 11.25.0。用 pnpm run dev:selfhost 开发，pnpm run build:selfhost 构建，pnpm run start:selfhost 启动，pnpm run check:selfhost 验证真实 HTTP 与 SQLite 持久化。Sites 继续使用 pnpm run build 和原有部署流程。已执行的检查及验证边界见 [验证记录](docs/selfhost-verification.md)。
 
-代码采用 MIT 许可证，第三方组件保留其原许可；数据出处与使用说明见 [DATA_NOTICE.md](DATA_NOTICE.md)。所有者代提交约定见 [提交身份](docs/commit-identity.md)。
+代码采用 MIT 许可证，第三方组件保留其原许可；数据出处与使用说明见 [DATA_NOTICE.md](DATA_NOTICE.md)。

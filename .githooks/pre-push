@@ -1,2 +1,0 @@
-#!/bin/sh
-exec node scripts/check-commit-identity.mjs --head

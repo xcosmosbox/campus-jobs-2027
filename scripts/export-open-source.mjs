@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {pathToFileURL,fileURLToPath} from 'node:url';
 
 const root=fileURLToPath(new URL('..',import.meta.url));
-const directories=['app','components','lib','db','drizzle','scripts','build','vendor','.githooks','datasets'];
+const directories=['app','components','lib','db','drizzle','scripts','build','vendor','datasets'];
 const files=['package.json','pnpm-lock.yaml','tsconfig.json','next.config.ts','vite.config.ts','postcss.config.mjs','eslint.config.mjs','components.json','cloudflare-env.d.ts','Dockerfile','compose.yaml','.dockerignore','.gitignore','.env.example','README.md','LICENSE','DATA_NOTICE.md','AGENTS.md'];
 const publicData=['opportunities.json','positions.json','legacy-positions.json','position-aliases.json','position-scans.json','catalog-index.json','catalog-meta.json'];
 function safeFilter(path){if(lstatSync(path).isSymbolicLink())throw new Error('Symlinks are not allowed in the public source export');const name=basename(path);return !['.git','.wrangler','.sites-runtime','node_modules','storage','exports','outputs'].includes(name)&&(!name.startsWith('.env')||name==='.env.example')&&!/\.(sqlite|db)(-(wal|shm))?$/.test(name);}
@@ -19,7 +19,7 @@ export function exportOpenSource(outputDirectory=resolve('exports/open-source'))
  for(const directory of directories)copy(directory);for(const file of files)copy(file);
  mkdirSync(resolve(destination,'data'),{recursive:true});for(const name of publicData)copy('data/'+name);copy('data/positions');
  mkdirSync(resolve(destination,'public'),{recursive:true});copy('public/favicon.svg');
- mkdirSync(resolve(destination,'docs'),{recursive:true});for(const name of ['self-hosting.md','data-model.md','selfhost-verification.md','commit-identity.md'])copy('docs/'+name);
+ mkdirSync(resolve(destination,'docs'),{recursive:true});for(const name of ['self-hosting.md','data-model.md','selfhost-verification.md'])copy('docs/'+name);
  const verification=readFileSync(resolve(root,'docs/catalog-verification.md'),'utf8').replace(/^`catalog-audit\/`[^\n]+/m,'公共源码包含岗位数据、来源、覆盖范围及两轮独立复核结论。原始抓取与研究归档不在公共源码包中。');
  writeFileSync(resolve(destination,'docs/catalog-verification.md'),verification);
  mkdirSync(resolve(destination,'.openai'),{recursive:true});writeFileSync(resolve(destination,'.openai/hosting.json'),JSON.stringify({d1:'DB',r2:null},null,2)+'\n');
