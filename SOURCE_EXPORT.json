@@ -21,7 +21,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "d01d72de0b0f8b2024cc92dc2cf767ddefcdcebb87a27a743bac9f46f22307eb"
+      "sha256": "30cf83ab5f9357aeaf0983627a9f21b957fc824c24f7de71ce72fcc016fdfcf0"
     },
     {
       "path": "DATA_NOTICE.md",
@@ -37,7 +37,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "1e91653466aa2a5eb120f7647f1fd0f00cd860742c2d74f65180d75beffbb6c9"
+      "sha256": "b74343b59d40d3b3231df5ca5dfbbda803e66fe120b89430edf96d37de60c553"
     },
     {
       "path": "app/api/history/route.ts",
@@ -57,7 +57,7 @@
     },
     {
       "path": "app/globals.css",
-      "sha256": "46fe90d8dd1e9e2ffa73f63ad9127bb8326ae6e79bb37bdd7213ae8dccb91365"
+      "sha256": "32928140c0dca38576e03431c5845f01cc54bddc560599f192687ed97f19bd18"
     },
     {
       "path": "app/layout.tsx",
@@ -65,7 +65,7 @@
     },
     {
       "path": "app/page.tsx",
-      "sha256": "c6c0272e36bea0582bc97c0112fa0c6f44d64fb10f579792c3161f852ff13d0c"
+      "sha256": "0cc71b1b0a9b1436b0fc09ba4beb697e1272111b1118136bcf84ddf00feb3df4"
     },
     {
       "path": "build/connector-preview-plugin.mjs",
@@ -548,8 +548,28 @@
       "sha256": "350f5c171a7f1caea80f2a936988d7f3d34642409395cff1e4ebbfa065b7fdea"
     },
     {
+      "path": "docs/images/cover.svg",
+      "sha256": "b203ec0f2744215584d22b1063bc3e5e422f318bb595b66021899511e218caaa"
+    },
+    {
+      "path": "docs/images/first-application.svg",
+      "sha256": "23f48e4d87bd41f76379d91484c58e13ab874d9cfc92bad3610c767fee6382aa"
+    },
+    {
+      "path": "docs/images/verification-signals.svg",
+      "sha256": "807515ce8abc002301079f49c6e0f81f22b29bdace18f8ce585e9f967a388df0"
+    },
+    {
+      "path": "docs/images/workspace-saving.svg",
+      "sha256": "5d5c1f0bd2689762c3cbc959b764404bd4290cd107a15c76226483502b94ee17"
+    },
+    {
+      "path": "docs/quick-start.md",
+      "sha256": "61ed8c9ecdf1fd7dceec66e5c6423a1b69dbfb19183d5490f85528e0d4267070"
+    },
+    {
       "path": "docs/self-hosting.md",
-      "sha256": "3e13a13548ae5d10722a1105ddf5728425eab202b5336328f033dab1a3f1e5d1"
+      "sha256": "18ea7961f630d729a7db6869fbfa2e4aa0d4c0310bc3d5f8e25e581ed238bb7e"
     },
     {
       "path": "docs/selfhost-verification.md",
@@ -733,7 +753,7 @@
     },
     {
       "path": "scripts/export-open-source.mjs",
-      "sha256": "ebf11f8a0e182435f121ef7dc11c69debe97ffbeb3d3da474a4b8c0599bcf894"
+      "sha256": "ca0a95dc2dae29daa920b6a7c2079a78c9b909fef79e136df67f6d26d2aa87ba"
     },
     {
       "path": "scripts/export-public-data.mjs",

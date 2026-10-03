@@ -43,7 +43,7 @@ pnpm run export:jobs
 
 ## Sites
 
-相同页面、筛选、备份和保存逻辑继续支持 Sites／D1。Sites 构建不设置 AUTUMN27_TARGET=sqlite，由 Sites 配置逻辑绑定 DB、项目身份和登录入口，使用原有私密部署流程。独立 Node 构建不加载 Cloudflare Workers 或 Sites 登录接口。
+相同页面、筛选、备份和保存逻辑继续支持 Sites／D1。Sites 构建不设置 AUTUMN27_TARGET=sqlite，由 Sites 配置逻辑绑定 DB、项目身份和登录入口，使用已配置的部署流程。独立 Node 构建不加载 Cloudflare Workers 或 Sites 登录接口。
 
 ## 检查
 
