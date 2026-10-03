@@ -65,7 +65,7 @@
     },
     {
       "path": "app/globals.css",
-      "sha256": "26d1224169153b1a499ba1cefca33407f30050510454c85c7ad37c28d2bd3b61"
+      "sha256": "46fe90d8dd1e9e2ffa73f63ad9127bb8326ae6e79bb37bdd7213ae8dccb91365"
     },
     {
       "path": "app/layout.tsx",
@@ -73,7 +73,7 @@
     },
     {
       "path": "app/page.tsx",
-      "sha256": "139d3d3c10bd7ffcd9f6dc7b5dfadb1fac9a85d7d874644316686ca834b0664b"
+      "sha256": "c6c0272e36bea0582bc97c0112fa0c6f44d64fb10f579792c3161f852ff13d0c"
     },
     {
       "path": "build/connector-preview-plugin.mjs",
@@ -106,6 +106,10 @@
     {
       "path": "components/recruitment/forms.tsx",
       "sha256": "1664a6067050fea1a077aa7aed3045f458f62f4c5dfc85e08faa08aacae545b3"
+    },
+    {
+      "path": "components/recruitment/github-link.tsx",
+      "sha256": "31f5403326234c5d0f9a1fd8cb180b5191bcecfe715b84efebe97384f8e2fb2f"
     },
     {
       "path": "components/recruitment/position-coverage.tsx",
@@ -806,6 +810,10 @@
     {
       "path": "tsconfig.json",
       "sha256": "7199c6e4e400921e8049729840165a39f1476fa97901bed00239e7697bfe8da4"
+    },
+    {
+      "path": "vendor/octicons.LICENSE",
+      "sha256": "da259c8bd0de62713ccdcf88910aebca810644f98c2c912bad814fc79ea778df"
     },
     {
       "path": "vendor/shadcn-tailwind-4.13.0.LICENSE.md",
